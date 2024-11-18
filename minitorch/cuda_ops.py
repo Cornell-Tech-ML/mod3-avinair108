@@ -372,8 +372,34 @@ def _mm_practice(out: Storage, a: Storage, b: Storage, size: int) -> None:
 
     """
     BLOCK_DIM = 32
-    # TODO: Implement for Task 3.3.
-    raise NotImplementedError("Need to implement for Task 3.3")
+    a_shared = cuda.shared.array((BLOCK_DIM, BLOCK_DIM), numba.float64)
+    b_shared = cuda.shared.array((BLOCK_DIM, BLOCK_DIM), numba.float64)
+
+    i = cuda.threadIdx.x
+    j = cuda.threadIdx.y
+
+    # Clear the output element in shared memory
+    if i < size and j < size:
+        out_pos = i * size + j
+        out[out_pos] = 0.0
+
+    # Load data from global memory to shared memory
+    for k in range(size):
+        if i < size and k < size:
+            a_shared[i, k] = a[i * size + k]
+        if k < size and j < size:
+            b_shared[k, j] = b[k * size + j]
+    cuda.syncthreads()
+
+    # Perform matrix multiplication
+    result = 0.0
+    for k in range(size):
+        result += a_shared[i, k] * b_shared[k, j]
+
+    # Write the result back to global memory
+    if i < size and j < size:
+        out_pos = i * size + j
+        out[out_pos] = result
 
 
 jit_mm_practice = jit(_mm_practice)
