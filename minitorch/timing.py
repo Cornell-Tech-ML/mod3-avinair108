@@ -1,9 +1,12 @@
 import random
 from collections import defaultdict
-import minitorch
 import time
 import sys
+
+sys.path.append("/content/mod3-avinair108")
 import numpy as np
+import minitorch
+
 
 FastTensorBackend = minitorch.TensorBackend(minitorch.FastOps)
 GPUBackend = minitorch.TensorBackend(minitorch.CudaOps)
