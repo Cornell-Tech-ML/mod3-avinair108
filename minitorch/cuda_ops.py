@@ -234,7 +234,7 @@ def tensor_zip(
 
 
 def _sum_practice(out: Storage, a: Storage, size: int) -> None:
-    """This is a practice sum kernel to prepare for reduce.
+    r"""This is a practice sum kernel to prepare for reduce.
 
     Given an array of length $n$ and out of size $n // \text{blockDIM}$
     it should sum up each blockDim values into an out cell.
@@ -281,6 +281,17 @@ jit_sum_practice = cuda.jit()(_sum_practice)
 
 
 def sum_practice(a: Tensor) -> TensorData:
+    """Higher-order tensor sum function.
+
+    This function computes the sum of all values in a tensor.
+
+    Args:
+        a: The tensor to sum.
+
+    Returns:
+        A tensor with a single value: the sum of all values in `a`.
+
+    """
     (size,) = a.shape
     threadsperblock = THREADS_PER_BLOCK
     blockspergrid = (size // THREADS_PER_BLOCK) + 1
