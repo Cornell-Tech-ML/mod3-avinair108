@@ -74,7 +74,7 @@ class FastTrain:
 
         for epoch in range(max_epochs + 1):
             #timing
-            start_time = time.time() 
+            start_time = time.time()
             total_loss = 0.0
             c = list(zip(data.X, data.y))
             random.shuffle(c)
