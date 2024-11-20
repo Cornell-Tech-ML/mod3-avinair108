@@ -309,22 +309,6 @@ def tensor_reduce(
         a_strides: Strides,
         reduce_dim: int,
     ) -> None:
-        # for i in prange(len(out)):
-        #     out_index = np.zeros(out_shape, dtype=np.int32)
-        #     a_index = np.zeros(a_shape, dtype=np.int32)
-        #     to_index(i, out_shape, out_index)
-        #     out_pos = index_to_position(out_index, out_strides)
-        #     result = out[out_pos]
-        #     for j in range(a_shape[reduce_dim]):
-        #         np.copyto(a_index, out_index)
-        #         # Update the input index along the reduction dimension
-        #         a_index[reduce_dim] = j
-        #         # Convert the input index to a flat position in the input storage
-        #         a_pos = index_to_position(a_index, a_strides)
-        #         # Apply the reduction function
-        #         result = fn(result, a_storage[a_pos])
-
-        #     out[out_pos] = result
         for i in prange(len(out)):
             out_index: Index = np.zeros(MAX_DIMS, np.int32)
             reduce_size = a_shape[reduce_dim]
