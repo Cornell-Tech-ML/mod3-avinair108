@@ -35,7 +35,7 @@ The files that will be synced are:
 Output from running parallel_check.py:
 
 # MAP
-
+<pre>
 ================================================================================
  Parallel Accelerator Optimizing:  Function tensor_map.<locals>._map, 
 /Users/avinair/Desktop/miniTorch4/mod3-avinair108/minitorch/fast_ops.py (163)  
@@ -140,3 +140,4 @@ loop is executed and reused inside the loop):
    Allocation:: in_index: Index = np.zeros(MAX_DIMS, dtype=np.int32)
     - numpy.empty() is used for the allocation.
 None
+</pre>
