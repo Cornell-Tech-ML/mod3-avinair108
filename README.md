@@ -34,7 +34,7 @@ The files that will be synced are:
 
 Output from running parallel_check.py:
 
-MAP
+# MAP
  
 ================================================================================
  Parallel Accelerator Optimizing:  Function tensor_map.<locals>._map, 
