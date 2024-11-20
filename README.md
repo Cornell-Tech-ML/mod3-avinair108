@@ -33,6 +33,7 @@ The files that will be synced are:
 
 # Training Logs
 
+* Simple:
 Command Flags: 
 <pre>--BACKEND gpu --HIDDEN 100 --DATASET simple --RATE 0.05</pre>
 <img width="693" alt="simplelogGPU" src="https://github.com/user-attachments/assets/ef903a6d-630f-4a0d-8cb1-aca4598ac4fe">
@@ -41,7 +42,7 @@ Command Flags:
 <pre>--BACKEND cpu --HIDDEN 100 --DATASET simple --RATE 0.05</pre>
 <img width="702" alt="splitCPU" src="https://github.com/user-attachments/assets/53376a76-11a9-4faa-a886-6109935ae7fa">
 
-
+* Split:
 Command Flags: 
 <pre>--BACKEND gpu --HIDDEN 100 --DATASET split --RATE 0.05</pre>
 <img width="674" alt="logsforgpusplit" src="https://github.com/user-attachments/assets/fe6f7e53-a9fe-4206-88a7-bcd7d552e769">
@@ -50,7 +51,7 @@ Command Flags:
 <pre>--BACKEND cpu --HIDDEN 100 --DATASET split --RATE 0.05</pre>
 <img width="681" alt="logsforcpusplit" src="https://github.com/user-attachments/assets/83e21da0-77f4-46fe-b565-2fc3bf9d1658">
 
-
+* XOR:
 Command Flags: 
 <pre>--BACKEND gpu --HIDDEN 100 --DATASET xor --RATE 0.05</pre>
 <img width="686" alt="xorGPU" src="https://github.com/user-attachments/assets/9cecb62c-f94d-4131-b60c-056355855328">
@@ -59,7 +60,7 @@ Command Flags:
 <pre>--BACKEND cpu --HIDDEN 100 --DATASET xor --RATE 0.05</pre>
 <img width="694" alt="xorCPU" src="https://github.com/user-attachments/assets/18fc74d8-608d-426b-9134-dd5d9ff3a838">
 
-
+* Simple - Bigger Model:
 Command Flags: 
 <pre>--BACKEND gpu --HIDDEN 200 --DATASET simple --RATE 0.05</pre>
 <img width="680" alt="heavysimplegpu" src="https://github.com/user-attachments/assets/5702bb62-7f20-4e10-8b93-e981a7ca3dad">
