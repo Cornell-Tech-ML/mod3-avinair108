@@ -34,6 +34,7 @@ The files that will be synced are:
 # Training Logs
 
 * Simple:
+<br>
 Command Flags: 
 <pre>--BACKEND gpu --HIDDEN 100 --DATASET simple --RATE 0.05</pre>
 <img width="693" alt="simplelogGPU" src="https://github.com/user-attachments/assets/ef903a6d-630f-4a0d-8cb1-aca4598ac4fe">
